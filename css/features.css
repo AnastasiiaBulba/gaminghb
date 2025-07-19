@@ -1,0 +1,424 @@
+/* Features Section Styles for Egg Shooter 2 */
+
+.features {
+  padding: var(--spacing-xxl) 0;
+  background: var(--white);
+  position: relative;
+}
+
+.features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, var(--gradient-hero), transparent);
+  opacity: 0.1;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  color: var(--dark-bg);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.feature-card {
+  background: var(--white);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  animation: rotate 10s linear infinite;
+}
+
+.feature-card h3 {
+  color: var(--dark-bg);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Egg Shooter Theme Specific Features */
+.feature-card.egg-theme {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 109, 0.1) 0%,
+    rgba(255, 107, 53, 0.1) 100%
+  );
+}
+
+.feature-card.slingshot-theme {
+  background: linear-gradient(
+    135deg,
+    rgba(78, 205, 196, 0.1) 0%,
+    rgba(68, 160, 141, 0.1) 100%
+  );
+}
+
+.feature-card.target-theme {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(243, 156, 18, 0.1) 100%
+  );
+}
+
+.feature-card.power-theme {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 109, 0.1) 0%,
+    rgba(78, 205, 196, 0.1) 100%
+  );
+}
+
+/* Feature Icons Animation */
+.feature-icon.egg-icon {
+  background: var(--gradient-primary);
+  animation: eggBounce 2s ease-in-out infinite;
+}
+
+.feature-icon.slingshot-icon {
+  background: var(--gradient-secondary);
+  animation: slingshotPull 3s ease-in-out infinite;
+}
+
+.feature-icon.target-icon {
+  background: var(--gradient-primary);
+  animation: targetHit 2.5s ease-in-out infinite;
+}
+
+.feature-icon.power-icon {
+  background: var(--gradient-secondary);
+  animation: powerUp 2s ease-in-out infinite;
+}
+
+@keyframes eggBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+@keyframes slingshotPull {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes targetHit {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes powerUp {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(180deg);
+  }
+}
+
+/* Feature Card Hover Effects */
+.feature-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.05) 0%,
+    rgba(255, 230, 109, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: var(--border-radius-xl);
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+/* Feature Card Content */
+.feature-card h3 {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .feature-card {
+    padding: var(--spacing-lg);
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-card {
+    padding: var(--spacing-md);
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Feature Stats */
+.feature-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.feature-stat {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.feature-stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  display: block;
+}
+
+.feature-stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .feature-stats {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .feature-stat-number {
+    font-size: 2rem;
+  }
+}
+
+/* Feature Categories */
+.feature-category {
+  margin-bottom: var(--spacing-xl);
+}
+
+.category-title {
+  text-align: center;
+  color: var(--dark-bg);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.category-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-secondary);
+  border-radius: 2px;
+}
+
+/* Feature Highlights */
+.feature-highlight {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-highlight::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 15s linear infinite;
+}
+
+.feature-highlight h3 {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+.feature-highlight p {
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,276 @@
+/* Header Styles for Egg Shooter 2 */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 37, 47, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--primary-color);
+  transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+  background: rgba(26, 37, 47, 0.98);
+  box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+}
+
+.logo:hover {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  margin-right: var(--spacing-sm);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(360deg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  gap: 4px;
+  transition: all var(--transition-normal);
+}
+
+.burger-line {
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.burger-menu:hover .burger-line {
+  background: var(--accent-color);
+}
+
+.burger-menu.active .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(26, 37, 47, 0.98);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid var(--primary-color);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: var(--spacing-lg);
+  margin: 0;
+}
+
+.mobile-nav-link {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+  margin-bottom: var(--spacing-sm);
+  text-align: center;
+}
+
+.mobile-nav-link:hover {
+  background: var(--gradient-primary);
+  color: var(--white);
+  transform: translateX(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .header-content {
+    padding: var(--spacing-sm);
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Egg Shooter Theme Specific */
+.header .logo-icon {
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.header .logo-icon::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 230, 109, 0.3) 0%,
+    transparent 70%
+  );
+  animation: rotate 10s linear infinite;
+}
+
+/* Navigation Hover Effects */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active State */
+.nav-link.active {
+  color: var(--accent-color);
+  background: rgba(255, 230, 109, 0.1);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}

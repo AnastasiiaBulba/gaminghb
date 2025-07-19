@@ -1,0 +1,402 @@
+/* How to Play Section Styles for Egg Shooter 2 */
+
+.how-to-play {
+  padding: var(--spacing-xxl) 0;
+  background: var(--light-bg);
+  position: relative;
+}
+
+.how-to-play::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,107,53,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  opacity: 0.3;
+}
+
+.how-to-play-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.how-to-play-image {
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+}
+
+.how-to-play-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+}
+
+.how-to-play-image:hover img {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+.how-to-play-image::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-xl);
+  opacity: 0.1;
+  z-index: -1;
+  animation: pulse 3s infinite;
+}
+
+.instructions-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.instruction-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.instruction-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-primary);
+  transform: scaleY(0);
+  transition: transform var(--transition-normal);
+}
+
+.instruction-step:hover::before {
+  transform: scaleY(1);
+}
+
+.instruction-step:hover {
+  transform: translateX(10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.instruction-step:hover .step-number {
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  animation: rotate 8s linear infinite;
+}
+
+.step-content h3 {
+  color: var(--dark-bg);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.3rem;
+}
+
+.step-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Egg Shooter Theme Specific */
+.instruction-step.step-1 {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 109, 0.1) 0%,
+    rgba(255, 107, 53, 0.1) 100%
+  );
+}
+
+.instruction-step.step-2 {
+  background: linear-gradient(
+    135deg,
+    rgba(78, 205, 196, 0.1) 0%,
+    rgba(68, 160, 141, 0.1) 100%
+  );
+}
+
+.instruction-step.step-3 {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(243, 156, 18, 0.1) 100%
+  );
+}
+
+.instruction-step.step-4 {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 230, 109, 0.1) 0%,
+    rgba(78, 205, 196, 0.1) 100%
+  );
+}
+
+/* Step Animations */
+.instruction-step {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.instruction-step:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.instruction-step:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.instruction-step:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.instruction-step:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Step Number Animations */
+.step-number.step-1 {
+  background: var(--gradient-primary);
+  animation: eggBounce 2s ease-in-out infinite;
+}
+
+.step-number.step-2 {
+  background: var(--gradient-secondary);
+  animation: slingshotPull 3s ease-in-out infinite;
+}
+
+.step-number.step-3 {
+  background: var(--gradient-primary);
+  animation: targetHit 2.5s ease-in-out infinite;
+}
+
+.step-number.step-4 {
+  background: var(--gradient-secondary);
+  animation: powerUp 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .how-to-play-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .instruction-step {
+    padding: var(--spacing-md);
+  }
+
+  .step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-to-play {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .instruction-step {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instruction-step {
+    padding: var(--spacing-sm);
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* How to Play Stats */
+.how-to-play-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.how-to-play-stat {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.how-to-play-stat-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  display: block;
+}
+
+.how-to-play-stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .how-to-play-stats {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .how-to-play-stat-number {
+    font-size: 1.8rem;
+  }
+}
+
+/* How to Play Tips */
+.how-to-play-tips {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-lg);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.how-to-play-tips::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+.how-to-play-tips h3 {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+.how-to-play-tips p {
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+}
+
+/* How to Play Video */
+.how-to-play-video {
+  margin-top: var(--spacing-xl);
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.how-to-play-video iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .how-to-play-video iframe {
+    height: 300px;
+  }
+}
+
+/* How to Play Progress */
+.how-to-play-progress {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.progress-step {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.progress-step.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.progress-step.completed {
+  background: var(--success-color);
+}

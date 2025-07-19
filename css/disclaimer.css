@@ -1,0 +1,502 @@
+/* Disclaimer Section Styles for Egg Shooter 2 */
+
+.disclaimer-hero {
+  padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  padding-top: 100px !important;
+  background: var(--gradient-hero);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.disclaimer-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="disclaimer-pattern" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="37.5" cy="12.5" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="12.5" cy="37.5" r="1.5" fill="rgba(255,255,255,0.09)"/><circle cx="37.5" cy="37.5" r="2" fill="rgba(255,255,255,0.07)"/></pattern></defs><rect width="100" height="100" fill="url(%23disclaimer-pattern)"/></svg>');
+  opacity: 0.3;
+  animation: float 30s ease-in-out infinite;
+}
+
+.disclaimer-hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer-hero-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  animation: expand 1.5s ease-out 0.5s both;
+}
+
+.disclaimer-hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 2;
+}
+
+.disclaimer-section {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid var(--primary-color);
+}
+
+.disclaimer-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+  position: relative;
+  z-index: 2;
+}
+
+.disclaimer-content {
+  padding: var(--spacing-xxl) 0;
+  background: var(--white);
+  position: relative;
+}
+
+.disclaimer-card {
+  background: var(--white);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.disclaimer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.disclaimer-content h2 {
+  color: var(--dark-bg);
+  margin-bottom: var(--spacing-lg);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.disclaimer-content h3 {
+  color: var(--dark-bg);
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+  font-size: 1.5rem;
+  position: relative;
+  padding-left: var(--spacing-md);
+}
+
+.disclaimer-content h3::before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.disclaimer-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+
+.disclaimer-content ul {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  padding-left: var(--spacing-lg);
+}
+
+.disclaimer-content li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.disclaimer-content strong {
+  color: var(--dark-bg);
+  font-weight: 700;
+}
+
+.disclaimer-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.disclaimer-content a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Disclaimer Warning Box */
+.disclaimer-warning {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(243, 156, 18, 0.1) 100%
+  );
+  border: 2px solid var(--warning-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.disclaimer-warning::before {
+  content: "⚠️";
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.disclaimer-warning h4 {
+  color: var(--warning-color);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem;
+}
+
+.disclaimer-warning p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Disclaimer Info Box */
+.disclaimer-info {
+  background: linear-gradient(
+    135deg,
+    rgba(78, 205, 196, 0.1) 0%,
+    rgba(68, 160, 141, 0.1) 100%
+  );
+  border: 2px solid var(--secondary-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.disclaimer-info::before {
+  content: "ℹ️";
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.disclaimer-info h4 {
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem;
+}
+
+.disclaimer-info p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Disclaimer Navigation */
+.disclaimer-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.disclaimer-nav a {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.disclaimer-nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left var(--transition-slow);
+}
+
+.disclaimer-nav a:hover::before {
+  left: 100%;
+}
+
+.disclaimer-nav a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Disclaimer Table of Contents */
+.disclaimer-toc {
+  background: var(--light-bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.disclaimer-toc h3 {
+  color: var(--dark-bg);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+.disclaimer-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.disclaimer-toc li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.disclaimer-toc a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  display: block;
+  padding: var(--spacing-xs) 0;
+  position: relative;
+}
+
+.disclaimer-toc a::before {
+  content: "▶";
+  color: var(--primary-color);
+  margin-right: var(--spacing-xs);
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: all var(--transition-normal);
+}
+
+.disclaimer-toc a:hover {
+  color: var(--accent-color);
+  transform: translateX(10px);
+}
+
+.disclaimer-toc a:hover::before {
+  opacity: 1;
+}
+
+/* Disclaimer Back to Top */
+.disclaimer-back-to-top {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: var(--gradient-primary);
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.disclaimer-back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.disclaimer-back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .disclaimer-hero {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    padding-top: calc(var(--spacing-xl) + 100px);
+  }
+
+  .disclaimer-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .disclaimer-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .disclaimer-section {
+    padding: var(--spacing-xl) 0;
+    padding-left: calc(var(--spacing-lg) + 8px);
+  }
+
+  .disclaimer-content {
+    padding: var(--spacing-sm);
+  }
+
+  .disclaimer-card {
+    padding: var(--spacing-md);
+  }
+
+  .disclaimer-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .disclaimer-content h3 {
+    font-size: 1.3rem;
+    padding-left: calc(var(--spacing-md) + 8px);
+  }
+
+  .disclaimer-nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .disclaimer-back-to-top {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .disclaimer-hero-title {
+    font-size: 2rem;
+  }
+
+  .disclaimer-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .disclaimer-content {
+    padding: var(--spacing-xs);
+  }
+
+  .disclaimer-card {
+    padding: var(--spacing-sm);
+  }
+
+  .disclaimer-container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  .disclaimer-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .disclaimer-content h3 {
+    font-size: 1.2rem;
+    padding-left: calc(var(--spacing-md) + 8px);
+  }
+
+  .disclaimer-section {
+    padding-left: calc(var(--spacing-lg) + 8px);
+  }
+
+  .disclaimer-warning,
+  .disclaimer-info {
+    padding: var(--spacing-sm);
+  }
+
+  .disclaimer-back-to-top {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Disclaimer Print Styles */
+@media print {
+  .disclaimer-hero {
+    background: white !important;
+    color: black !important;
+  }
+
+  .disclaimer-content {
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+  }
+
+  .disclaimer-nav,
+  .disclaimer-back-to-top {
+    display: none !important;
+  }
+}
+
+/* Disclaimer Animation */
+.disclaimer-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.disclaimer-warning,
+.disclaimer-info {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.disclaimer-warning {
+  animation-delay: 0.2s;
+}
+
+.disclaimer-info {
+  animation-delay: 0.4s;
+}
+
+/* Disclaimer Scroll Progress */
+.disclaimer-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--light-bg);
+  z-index: 1001;
+}
+
+.disclaimer-progress-bar {
+  height: 100%;
+  background: var(--gradient-primary);
+  width: 0%;
+  transition: width var(--transition-normal);
+}

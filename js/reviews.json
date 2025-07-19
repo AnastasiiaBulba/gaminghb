@@ -1,0 +1,40 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "author": "Alex Johnson",
+      "text": "This game is absolutely addictive! The egg shooting mechanics are so satisfying and the power-ups make every level exciting. I've been playing for hours and still can't get enough. The graphics are stunning and the sound effects are perfect!",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "author": "Sarah Chen",
+      "text": "As someone who loves puzzle games, Egg Shooter 2 is exactly what I was looking for. The slingshot mechanics are intuitive and the combo system is incredibly rewarding. The difficulty progression is perfect - challenging but fair!",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "author": "Mike Rodriguez",
+      "text": "My kids love this game and I love that it's both fun and educational. The colorful eggs and explosive effects keep them engaged for hours. The controls are simple enough for kids but the strategy keeps adults interested too.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "author": "Emma Thompson",
+      "text": "Perfect for quick gaming sessions! I play it on my commute and the levels are just the right length. The power-ups add a great strategic element and the boss battles are epic. Highly recommend for any puzzle game fan!",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "author": "David Park",
+      "text": "I'm not usually into mobile games, but Egg Shooter 2 changed my mind! The precision shooting mechanics are so satisfying and the visual effects are amazing. It's become my go-to game for relaxation and fun.",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "author": "Lisa Wilson",
+      "text": "This is the best bubble shooter game I've ever played. The egg theme is unique and the gameplay is incredibly polished. The achievement system keeps me motivated and the global leaderboards add great competition!",
+      "rating": 5
+    }
+  ]
+}
