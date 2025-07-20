@@ -44,6 +44,14 @@
   animation: expand 1.5s ease-out 0.5s both;
 }
 
+.news-hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 2;
+}
+
 .news-section {
   padding: var(--spacing-xxl) 0;
   background: var(--white);
