@@ -105,8 +105,9 @@ const siteData = {
   contact: {
     email: "contact@gaminghb.com",
     phone: "+1 (403) 979-0103",
-    address: "34 Maple Street, Vancouver, British Columbia V6B 1A1, Canada",
-    mapLocation: "34 Maple Street, Vancouver, British Columbia V6B 1A1, Canada",
+    address: "2687 Maple Street, Vancouver, British Columbia V6J 3T7, Canada",
+    mapLocation:
+      "2687 Maple Street, Vancouver, British Columbia V6J 3T7, Canada",
   },
 };
 

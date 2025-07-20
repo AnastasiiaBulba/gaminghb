@@ -116,7 +116,7 @@ function buildFooter() {
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
-                            <span>34 Maple Street, Vancouver, British Columbia V6B 1A1, Canada</span>
+                            <span>2687 Maple Street, Vancouver, British Columbia V6J 3T7, Canada</span>
                         </div>
                     </div>
                 </div>
